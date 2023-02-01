@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="288.0" prefWidth="303.0" style="-fx-background-color: linear-gradient(to right, #DECBA4, #3E5151); -fx-background-radius: 15px; -fx-border-style: solid; -fx-border-radius: 10px" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <VBox prefHeight="244.0" prefWidth="303.0">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="293.0" spacing="5.0">
+               <children>
+                    <AnchorPane fx:id="firstLink" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="52.0">
+                        <children>
+                            <Circle fill="#b2eeee" layoutX="27.0" layoutY="24.0" radius="20.0" stroke="#5b5959" strokeType="INSIDE" />
+                            <Label layoutX="12.0" layoutY="7.0" text="var1" textAlignment="RIGHT" translateX="3.0" translateY="8.0" />
+                        </children>
+                    </AnchorPane>
+                    <AnchorPane fx:id="secondLink" prefHeight="43.0" prefWidth="89.0">
+                        <children>
+                            <Circle fill="#b2eeee" layoutX="14.0" layoutY="23.0" radius="20.0" stroke="#5b5959" strokeType="INSIDE" />
+                            <Label layoutY="7.0" text="var2" textAlignment="RIGHT" translateX="3.0" translateY="8.0" />
+                        </children>
+                    </AnchorPane>
+                    <AnchorPane fx:id="thirdLink" prefHeight="39.0" prefWidth="112.0">
+                     <children>
+                            <Circle fill="#b2eeee" layoutX="19.0" layoutY="23.0" radius="20.0" stroke="#5b5959" strokeType="INSIDE" />
+                            <Label layoutX="8.0" layoutY="15.0" text="var3" textAlignment="RIGHT" />
+                     </children>
+                    </AnchorPane>
+                      <Label fx:id="titleBar" prefHeight="20.0" prefWidth="190.0" text="Node" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                      <Button fx:id="deleteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #3CB371;" text="X" textAlignment="RIGHT" />
+                        <AnchorPane fx:id="outputLinkHandle" nodeOrientation="LEFT_TO_RIGHT">
+                            <children>
+                            <Circle fill="#0a0a0a" layoutX="14.0" layoutY="25.0" radius="15.0" stroke="#403f3f" strokeType="INSIDE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="1.0" />
+                            </children>
+                        </AnchorPane>
+               </children>
+            </HBox>
+              <ImageView fx:id="imageView" fitHeight="190.0" fitWidth="291.0" pickOnBounds="true" preserveRatio="true" visible="false" y="100.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+    </children>
+</fx:root>

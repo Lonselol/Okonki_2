@@ -68,10 +68,8 @@ class UIFXML {
         const val FINISH_NODE = "EndNode.fxml"
         const val IMAGE_NODE = "ImageNode.fxml"
         const val VALUE_NODE = "ValueNode.fxml"
+        const val MODIFIER_NODE = "LinksNode.fxml"
         const val LINK_NODE = "NodeLink.fxml"
-        const val ONE_LINK = "OneLink.fxml"
-        const val TWO_LINKS = "TwoLinks.fxml"
-        const val THREE_LINKS = "ThreeLink.fxml"
     }
 }
 

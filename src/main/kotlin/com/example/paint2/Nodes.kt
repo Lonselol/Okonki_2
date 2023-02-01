@@ -21,6 +21,9 @@ abstract class ValueNode : DraggableNode() {
     @FXML
     var value: TextField? = null
 
+    @FXML
+    override var nodesCount = 1
+
     init {
         init(UIFXML.VALUE_NODE)
     }
@@ -108,6 +111,12 @@ abstract class ImageNode : DraggableNode() {
     var firstLink: AnchorPane? = null
 
     @FXML
+    var secondLink: AnchorPane? = null
+
+    @FXML
+    var thirdLink: AnchorPane? = null
+
+    @FXML
     var imageView: ImageView? = null
 
     override fun updateNode() {
@@ -127,8 +136,14 @@ abstract class ImageNode : DraggableNode() {
 
 class SepiaNode : ImageNode() {
 
+    @FXML
+    override var nodesCount = 1
     override fun addInit() {
         titleBar!!.text = Titles.SEPIA
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
 
@@ -154,14 +169,21 @@ class SepiaNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.ONE_LINK)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class InvertNode : ImageNode() {
+
+    @FXML
+    override var nodesCount = 1
     override fun addInit() {
         titleBar!!.text = Titles.INVERT
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
 
@@ -180,14 +202,21 @@ class InvertNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.ONE_LINK)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class GreyNode : ImageNode() {
+
+    @FXML
+    override var nodesCount = 1
     override fun addInit() {
         titleBar!!.text = Titles.GREY
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
 
@@ -210,17 +239,21 @@ class GreyNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.ONE_LINK)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class BrightnessNode : ImageNode() {
     @FXML
-    var secondLink: AnchorPane? = null
+    override var nodesCount = 2
 
     override fun addInit() {
         titleBar!!.text = Titles.BRIGHT
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
         nodes[Link.TWO] = Triple(secondLink!!, null, NodeTypes.FLOAT)
@@ -271,17 +304,21 @@ class BrightnessNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.TWO_LINKS)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class GaussianNode : ImageNode() {
-    @FXML
-    var secondLink: AnchorPane? = null
 
+    @FXML
+    override var nodesCount = 2
     override fun addInit() {
         titleBar!!.text = Titles.GAUSSIAN
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
         nodes[Link.TWO] = Triple(secondLink!!, null, NodeTypes.INT)
@@ -312,20 +349,20 @@ class GaussianNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.TWO_LINKS)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class ScalePercentNode : ImageNode() {
     @FXML
-    var secondLink: AnchorPane? = null
-
-    @FXML
-    var thirdLink: AnchorPane? = null
-
+    override var nodesCount = 3
     override fun addInit() {
         titleBar!!.text = Titles.SCALE
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
         nodes[Link.TWO] = Triple(secondLink!!, null, NodeTypes.FLOAT)
@@ -356,20 +393,20 @@ class ScalePercentNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.THREE_LINKS)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class MovePercentNode : ImageNode() {
     @FXML
-    var secondLink: AnchorPane? = null
-
-    @FXML
-    var thirdLink: AnchorPane? = null
-
+    override var nodesCount = 3
     override fun addInit() {
         titleBar!!.text = Titles.MOVE
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
         nodes[Link.TWO] = Triple(secondLink!!, null, NodeTypes.FLOAT)
@@ -402,17 +439,20 @@ class MovePercentNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.THREE_LINKS)
+        init(UIFXML.MODIFIER_NODE)
     }
 
 }
 
 class RotateNode : ImageNode() {
     @FXML
-    var secondLink: AnchorPane? = null
-
+    override var nodesCount = 2
     override fun addInit() {
         titleBar!!.text = Titles.ROTATE
+
+        firstLink!!.isVisible = (nodesCount > 0)
+        secondLink!!.isVisible = (nodesCount > 1)
+        thirdLink!!.isVisible = (nodesCount > 2)
 
         nodes[Link.ONE] = Triple(firstLink!!, null, NodeTypes.IMAGE)
         nodes[Link.TWO] = Triple(secondLink!!, null, NodeTypes.FLOAT)
@@ -438,7 +478,7 @@ class RotateNode : ImageNode() {
     }
 
     init {
-        init(UIFXML.TWO_LINKS)
+        init(UIFXML.MODIFIER_NODE)
     }
 }
 

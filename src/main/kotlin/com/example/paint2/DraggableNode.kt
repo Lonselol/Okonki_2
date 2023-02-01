@@ -22,6 +22,9 @@ var stateAddNode = DataFormat("nodeAdd")
 
 abstract class DraggableNode : AnchorPane() {
     @FXML
+    open var nodesCount = 1
+
+    @FXML
     var rootPane: AnchorPane? = null
 
     @FXML
